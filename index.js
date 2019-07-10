@@ -4,6 +4,7 @@ import {
   Animated,
   TouchableWithoutFeedback,
   PanResponder,
+  I18nManager,
   Image,
   View
 } from 'react-native'
@@ -332,7 +333,8 @@ class SortableGrid extends Component {
     let blockHeight = this.state.blockHeight
     let placeOnRow = this.items.length % this.itemsPerRow
     let y = blockHeight * Math.floor(this.items.length / this.itemsPerRow)
-    let x = placeOnRow * blockWidth
+    let p = I18nManager.isRTL ? this.itemsPerRow - placeOnRow - 1 : placeOnRow;
+    let x = p * blockWidth;
     return { x, y }
   }
 
@@ -428,7 +430,11 @@ class SortableGrid extends Component {
       this.setState({ blockPositions, blockPositionsSetCount }, () => {
         this.items.forEach( (item, order) => {
           let blockIndex = _.findIndex(this.itemOrder, item => item.order === order)
-          let x = (order * this.state.blockWidth) % (this.itemsPerRow * this.state.blockWidth)
+          let placeOnRow = order % this.itemsPerRow;
+          let p = I18nManager.isRTL
+            ? this.itemsPerRow - 1 - placeOnRow
+            : placeOnRow;
+          let x = p * this.state.blockWidth;
           let y = Math.floor(order / this.itemsPerRow) * this.state.blockHeight
           this.state.blockPositions[blockIndex].origin = {x, y}
           this.animateBlockMove(blockIndex, {x, y})
@@ -578,7 +584,7 @@ class SortableGrid extends Component {
     this._blockPositionsSet() && (this.initialDragDone || this.state.deleteModeOn) &&
     { position: 'absolute',
       top: this._getBlock(key).currentPosition.getLayout().top,
-      left: this._getBlock(key).currentPosition.getLayout().left
+      end: this._getBlock(key).currentPosition.getLayout().left
     },
     this.state.activeBlock == key && this._blockActivationWiggle(),
     this.state.activeBlock == key && { zIndex: 1 },
@@ -597,7 +603,7 @@ const styles = StyleSheet.create(
   deletedBlock: {
     opacity: 0,
     position: 'absolute',
-    left: 0,
+    end: 0,
     top: 0,
     height: 0,
     width: 0
