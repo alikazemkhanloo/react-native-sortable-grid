@@ -7,6 +7,11 @@
   <img alt="Issue Stats" src="http://i.giphy.com/gcB8YYVtL2BsA.gif">
 </p>
 
+# after fork
+- [x] RTL support
+- [ ] add fixed item (#2)
+- [ ] fix typo `threshold` (#1)
+- [ ] migrate gesture and animation to reanimated
 # react-native-sortable-grid
 
 [![Join the chat at https://gitter.im/react-native-sortable-grid/Lobby](https://badges.gitter.im/react-native-sortable-grid/Lobby.svg)](https://gitter.im/react-native-sortable-grid/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
