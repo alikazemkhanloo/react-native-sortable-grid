@@ -23,12 +23,12 @@
 
 ## Installation
 
-``` npm i react-native-sortable-grid --save ```
+``` npm i rn-sortable-grid --save ```
 
 ## Usage
 
 ```
-import SortableGrid from 'react-native-sortable-grid'
+import SortableGrid from 'rn-sortable-grid'
 
 ...
 
