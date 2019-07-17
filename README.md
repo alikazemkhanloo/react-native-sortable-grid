@@ -12,6 +12,7 @@
 - [x] [add fixed item ](https://github.com/ollija/react-native-sortable-grid/pull/42)
 - [x] [fix typo 'threshold'](https://github.com/ollija/react-native-sortable-grid/pull/60)
 - [ ] add last item
+- [ ] change container height onLayout
 - [ ] migrate gesture and animation to reanimated
 # react-native-sortable-grid
 
