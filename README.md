@@ -123,6 +123,10 @@ import SortableGrid from 'rn-sortable-grid'
 
 Flag to mark a child node as being inactive. If set, no touch events will be fired when users interact with the node.
 
+- ``` fixed ``` **Boolean**
+
+Flag to mark a child node as being fixed. If set, this node will remain in it's original position and won't be affected by other nodes rearrangement.
+
 ## onDragRelease return value looks like this:
 
 ```
@@ -177,7 +181,7 @@ Object {
   <b>Basic item deletion</b><br>toggleDeleteMode() is called during onTap in this example<br><br>
   <img alt="Issue Stats" src="http://i.giphy.com/S4OC2Rt4JXEK4.gif">
   <br><br>
-  
+
   <b>Custom block animation can be passed to the grid<br><br>
   <img alt="Custom animation" src="http://i.giphy.com/FPyiKkqWf1fLW.gif">
   <br><br>
