@@ -415,17 +415,18 @@ class SortableGrid extends Component {
       const fixedLastKey = fixedLast && this.items[fixedLast].key;
       if (foundKey) {
         this.items[foundKey] = item;
-        console.log("found");
       } else {
         if (fixedLastKey) {
-          const lastItem = this.itemOrder.find(q => q.key === fixedLastKey);
+          const lastItemIndex = this.itemOrder.findIndex(
+            q => q.key === fixedLastKey
+          );
+          const lastItem = this.itemOrder[lastItemIndex];
           lastItem.order = this.items.length;
-          this.itemOrder.splice(this.items.length - 1, 0, {
+          this.itemOrder.splice(lastItemIndex, 0, {
             key: item.key,
             ref: item.ref,
             order: this.items.length - 1
           });
-          console.log(lastItem, this.itemOrder);
         } else {
           this.itemOrder.push({
             key: item.key,
