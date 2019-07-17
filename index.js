@@ -30,7 +30,10 @@ class Block extends Component {
         style={{ flex: 1 }}
         delayLongPress={this.props.delayLongPress}
         onLongPress={() =>
-          this.props.inactive || this.props.fixed || this.props.onLongPress()
+          this.props.inactive ||
+          this.props.fixed ||
+          this.props.last ||
+          this.props.onLongPress()
         }
         onPress={() => this.props.inactive || this.props.onPress()}
       >
@@ -60,6 +63,7 @@ class SortableGrid extends Component {
             deletionView={this._getDeletionView(key)}
             inactive={item.props.inactive}
             fixed={item.props.fixed}
+            last={item.props.last}
           >
             {item}
           </Block>
@@ -193,7 +197,7 @@ class SortableGrid extends Component {
           if (
             distance < closestDistance &&
             distance < this.state.blockWidth &&
-            !this.items[index].props.fixed
+            !(this.items[index].props.fixed || this.items[index].props.last)
           ) {
             closest = index;
             closestDistance = distance;
@@ -407,15 +411,29 @@ class SortableGrid extends Component {
         this.itemOrder,
         oldItem => oldItem.key === item.key
       );
-
+      const fixedLast = _.findKey(this.items, q => q.props.last === true);
+      const fixedLastKey = fixedLast && this.items[fixedLast].key;
       if (foundKey) {
         this.items[foundKey] = item;
+        console.log("found");
       } else {
-        this.itemOrder.push({
-          key: item.key,
-          ref: item.ref,
-          order: this.items.length
-        });
+        if (fixedLastKey) {
+          const lastItem = this.itemOrder.find(q => q.key === fixedLastKey);
+          lastItem.order = this.items.length;
+          this.itemOrder.splice(this.items.length - 1, 0, {
+            key: item.key,
+            ref: item.ref,
+            order: this.items.length - 1
+          });
+          console.log(lastItem, this.itemOrder);
+        } else {
+          this.itemOrder.push({
+            key: item.key,
+            ref: item.ref,
+            order: this.items.length
+          });
+        }
+
         if (!this.initialLayoutDone) {
           this.items.push(item);
         } else {
