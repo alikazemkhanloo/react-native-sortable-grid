@@ -9,8 +9,8 @@
 
 # after fork
 - [x] RTL support
-- [x] add fixed item (#2)
-- [x] fix typo `threshold` (#1)
+- [x] [add fixed item (#2)](https://github.com/ollija/react-native-sortable-grid/pull/42)
+- [x] [fix typo 'threshold'](https://github.com/ollija/react-native-sortable-grid/pull/60)
 - [ ] add last item
 - [ ] migrate gesture and animation to reanimated
 # react-native-sortable-grid
