@@ -16,13 +16,11 @@
 - [ ] migrate gesture and animation to reanimated
 
 # rn-sortable-grid
+[![npm](https://img.shields.io/npm/v/rn-sortable-grid.svg)]()
+[![npm](https://img.shields.io/npm/dw/rn-sortable-grid.svg)]()
+[![npm](https://img.shields.io/npm/l/rn-sortable-grid.svg)]()
 
-[![Join the chat at https://gitter.im/react-native-sortable-grid/Lobby](https://badges.gitter.im/react-native-sortable-grid/Lobby.svg)](https://gitter.im/react-native-sortable-grid/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![npm](https://img.shields.io/npm/dm/react-native-sortable-grid.svg)]()
-[![Sponsored by Leonidas](https://img.shields.io/badge/sponsored%20by-leonidas-389fc1.svg)](https://leonidasoy.fi/opensource)
-[![npm](https://img.shields.io/npm/l/react-native-sortable-grid.svg)]()
-[![David](https://img.shields.io/david/ollija/react-native-sortable-grid.svg)]()
-[![David](https://img.shields.io/david/dev/ollija/react-native-sortable-grid.svg)]()
+
 
 ## Installation
 
