@@ -1,3 +1,3 @@
 console.log(
-  "Please support us with a ⭐ if this package is usefull for you ❤️"
+  "if (you ❤️ rn-sortable-grid) {Please support with a ⭐;} else {do nothing 🙈}"
 );
