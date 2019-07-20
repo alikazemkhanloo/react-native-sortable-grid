@@ -8,7 +8,9 @@
   "version": "2.2.1",
   "description": "Drag-and-drop sortable grid view for React Native.",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "node postinstall.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alikazemkhanloo/rn-sortable-grid.git"
