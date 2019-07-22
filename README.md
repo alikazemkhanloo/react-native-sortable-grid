@@ -6,7 +6,7 @@
   <img alt="Issue Stats" src="http://i.giphy.com/gcB8YYVtL2BsA.gif">
 </p>
 
-# after fork
+# After fork
 
 - [x] RTL support
 - [x] [add fixed item ](https://github.com/ollija/react-native-sortable-grid/pull/42)
@@ -14,6 +14,8 @@
 - [x] add last item
 - [ ] change container height onLayout
 - [ ] migrate gesture and animation to reanimated
+
+Join the stargazers to support this library :)
 
 # rn-sortable-grid
 [![npm](https://img.shields.io/npm/v/rn-sortable-grid.svg)]()
